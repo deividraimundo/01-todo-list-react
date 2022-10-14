@@ -1,0 +1,33 @@
+.main {
+  max-width: 46rem;
+  margin: 3.125rem auto 0;
+}
+
+.info {
+  margin: 0 auto;
+  height: 1.1875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.tasks {
+  color: var(--gray-300);
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 15.25rem;
+  line-height: 1.4;
+}
+
+.tasks>img {
+  margin-bottom: 1rem;
+}
+
+.tasks>p {
+  font-weight: bold;
+}

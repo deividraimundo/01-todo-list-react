@@ -1,0 +1,73 @@
+.task {
+  background: var(--gray-500);
+  border: var(--gray-400) solid 1px;
+  border-radius: 8px;
+  height: 4.5rem;
+  text-align: justify;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.task>label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.task>label .wrapper {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+}
+
+.task>label .wrapper .button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  border: var(--blue) 2px solid;
+}
+
+.task>label .wrapper .button:hover {
+  background: var(--blue-dark-opacity);
+  border: var(--blue-dark) 2px solid;
+}
+
+.task>label .wrapper input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.task>p {
+  max-width: 39.5em;
+  padding: 1rem 0;
+}
+
+.trash {
+  transition: color 0.5s;
+}
+
+.trash:hover {
+  color: var(--danger);
+}
+
+.checkbox,
+.trash {
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .task>p {
+    max-width: 17rem;
+  }
+}

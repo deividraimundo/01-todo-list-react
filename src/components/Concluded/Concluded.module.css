@@ -1,0 +1,21 @@
+.concluded {
+  display: flex;
+  gap: 8px;
+}
+
+.concluded>p {
+  color: var(--purple);
+  font-weight: bold;
+}
+
+.concluded>div {
+  width: 1.5625rem;
+  height: 1.1875rem;
+  background: var(--gray-400);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+}

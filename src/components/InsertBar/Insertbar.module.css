@@ -1,0 +1,47 @@
+.insertbar {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-50%);
+  gap: 8px;
+  height: 3.25rem;
+}
+
+.bar,
+.button {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  border-radius: 8px;
+}
+
+.bar {
+  width: 39.875rem;
+  background: var(--gray-500);
+  color: var(--gray-300);
+  padding: 1rem;
+  border: 0;
+  resize: none;
+  line-height: 1.4;
+  outline: none;
+  overflow: hidden;
+}
+
+.bar:focus {
+  border: var(--purple-dark) 1px solid;
+  color: var(--gray-100);
+}
+
+.button {
+  width: 5.625rem;
+  border: 0;
+  cursor: pointer;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  font-weight: bold;
+  padding: 1rem;
+  gap: 8px;
+}
+
+.button:hover {
+  background: var(--blue);
+}
