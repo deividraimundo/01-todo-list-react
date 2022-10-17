@@ -1,19 +1,44 @@
+.imgNoTasks {
+  color: var(--gray-300);
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 15.25rem;
+  line-height: 1.4;
+}
+
+.imgNoTasks>img {
+  margin-bottom: 1rem;
+}
+
+.imgNoTasks>p {
+  font-weight: bold;
+}
+
+/* Tasks */
 .task {
   background: var(--gray-500);
   border: var(--gray-400) solid 1px;
   border-radius: 8px;
   height: 4.5rem;
+  padding: 0 1rem;
   text-align: justify;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
+/* CHECKBOX */
 .task>label {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transform: translateY(-50%);
 }
 
 .task>label .wrapper {
@@ -23,7 +48,7 @@
   position: relative;
 }
 
-.task>label .wrapper .button {
+.task>label .wrapper .inputNoCheck {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,7 +61,7 @@
   border: var(--blue) 2px solid;
 }
 
-.task>label .wrapper .button:hover {
+.task>label .wrapper .inputNoCheck:hover {
   background: var(--blue-dark-opacity);
   border: var(--blue-dark) 2px solid;
 }
@@ -47,22 +72,48 @@
   height: 0;
 }
 
-.task>p {
+.task>label .wrapper input[type="checkbox"]:checked+.inputNoCheck {
+  background: url("../../assets/vector.svg") no-repeat var(--purple-dark) center;
+  border: var(--purple-dark);
+}
+
+.task>label .wrapper input[type="checkbox"]:checked+.inputNoCheck:hover {
+  background: url("../../assets/vector.svg") no-repeat var(--purple) center;
+}
+
+/* TEXTO */
+.textNoCheck,
+.textCheck {
   max-width: 39.5em;
   padding: 1rem 0;
 }
 
-.trash {
-  transition: color 0.5s;
+.textCheck {
+  text-decoration: line-through;
+  color: var(--gray-300);
 }
 
-.trash:hover {
+/* LIXEIRA */
+.trash,
+.trashCheck {
+  background: transparent;
+  color: var(--gray-300);
+  transform: translateY(-25%);
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 3px 4px;
+}
+
+.trash:hover,
+.trashCheck:hover {
+  border-radius: 4px;
+  background: var(--gray-400);
   color: var(--danger);
 }
 
-.checkbox,
-.trash {
-  transform: translateY(-50%);
+.trash,
+.trashCheck {
   cursor: pointer;
 }
 

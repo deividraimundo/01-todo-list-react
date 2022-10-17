@@ -1,3 +1,14 @@
+.container {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 85%;
+  }
+}
+
 .insertbar {
   display: flex;
   justify-content: center;
@@ -7,7 +18,7 @@
 }
 
 .bar,
-.button {
+.insertbar>button {
   display: flex;
   align-items: center;
   font-size: 0.875rem;
@@ -31,7 +42,7 @@
   color: var(--gray-100);
 }
 
-.button {
+.insertbar>button {
   width: 5.625rem;
   border: 0;
   cursor: pointer;
@@ -44,4 +55,8 @@
 
 .button:hover {
   background: var(--blue);
+}
+
+.buttonDisable {
+  cursor: not-allowed;
 }

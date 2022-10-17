@@ -1,10 +1,14 @@
 import styles from './Createdtasks.module.css'
 
-export function CreatedTasks() {
+interface QuantityTasks {
+  quantityTasks: number
+}
+
+export function CreatedTasks({ quantityTasks }: QuantityTasks) {
   return (
     <div className={styles.createdtasks}>
       <p>Tarefas criadas</p>
-      <div>0</div>
+      <div>{quantityTasks}</div>
     </div>
   )
 }

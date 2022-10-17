@@ -9,7 +9,7 @@
 }
 
 .createdtasks>div {
-  width: 1.5625rem;
+  padding: 4px 8px;
   height: 1.1875rem;
   background: var(--gray-400);
   border-radius: 12px;
@@ -17,5 +17,5 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
 }

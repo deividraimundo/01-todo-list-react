@@ -1,0 +1,14 @@
+/* Info tasks */
+.main {
+  max-width: 46rem;
+  margin: 3.125rem auto 0;
+}
+
+.info {
+  margin: 0 auto;
+  height: 1.1875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}

@@ -1,10 +1,15 @@
 import styles from './Concluded.module.css'
 
-export function Concluded() {
+interface Conc {
+  concluded: number
+  created: number
+}
+
+export function Concluded({ created, concluded }: Conc) {
   return (
     <div className={styles.concluded}>
       <p>Concluidas</p>
-      <div>0</div>
+      <div>{concluded} de {created}</div>
     </div>
   )
 }
