@@ -42,7 +42,8 @@
   color: var(--gray-100);
 }
 
-.insertbar>button {
+.insertbar>.button,
+.buttonDisable {
   width: 5.625rem;
   border: 0;
   cursor: pointer;

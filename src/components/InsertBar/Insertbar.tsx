@@ -9,6 +9,7 @@ export function Insertbar() {
 
   const [tasks, setTasks] = useState<string[]>([])
   const [newTaskText, setNewTaskText] = useState<string>('')
+  const [isCompleted, setIsCompleted] = useState<string[]>([])
 
   function handleCreatedNewTask(event: FormEvent) {
     event.preventDefault()
@@ -27,7 +28,25 @@ export function Insertbar() {
       return task !== taskToDelete
     })
 
+    completedTask(taskToDelete, true)
     setTasks(taskWithoutDeleteOne)
+  }
+
+  function completedTask(taskToCompleted: string, remove: boolean) {
+    const taskWithoutCompletedOne = tasks.filter(task => {
+      return task === taskToCompleted
+    })
+
+    if (remove) {
+      const getIndexRemove = isCompleted.indexOf(taskToCompleted)
+      const tasksIncomplete = isCompleted.filter((_, index) => {
+        return index != getIndexRemove
+      })
+      setIsCompleted(tasksIncomplete)
+
+    } else {
+      setIsCompleted([...isCompleted, ...taskWithoutCompletedOne])
+    }
   }
 
   const isNewTaskEmpty = newTaskText.length === 0
@@ -56,7 +75,7 @@ export function Insertbar() {
 
       <InfoTask
         created={tasks.length}
-        concluded={0}
+        concluded={isCompleted.length}
       />
 
       {
@@ -64,11 +83,13 @@ export function Insertbar() {
           key={""}
           content={""}
           onDeleteTask={deleteTask}
+          onCompletedTask={completedTask}
         /> : tasks.map((task) => {
           return <Task
             key={task}
             content={task}
             onDeleteTask={deleteTask}
+            onCompletedTask={completedTask}
           />
         })
       }

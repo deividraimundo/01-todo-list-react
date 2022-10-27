@@ -7,14 +7,23 @@ import styles from './Task.module.css'
 interface Content {
   content: string
   onDeleteTask: (task: string) => void
+  onCompletedTask: (task: string, remove: boolean) => void
 }
 
-export function Task({ content, onDeleteTask }: Content) {
+export function Task({ content, onDeleteTask, onCompletedTask }: Content) {
 
   const [check, setCheck] = useState<boolean>(false)
 
   function handleDeleteTask() {
     onDeleteTask(content)
+  }
+
+  function handleCompletedTask() {
+    if (check) {
+      onCompletedTask(content, false)
+    } else {
+      onCompletedTask(content, true)
+    }
   }
 
   function NoTasks() {
@@ -30,12 +39,12 @@ export function Task({ content, onDeleteTask }: Content) {
   function HasTasks() {
     return (
       <div className={styles.task}>
-        <label htmlFor="check" >
+        <label >
           <div className={styles.wrapper}>
             <input
               checked={check}
               type="checkbox"
-              id="check"
+              onChange={handleCompletedTask}
             />
             <div
               id="checkButton"
